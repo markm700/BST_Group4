@@ -3,9 +3,7 @@
 
 typedef struct binary_tree{
 int num_elements;
-struct binary_tree* left;
-struct binary_tree* right;
-
+struct binary_tree* root;
 
 }bt;
 
