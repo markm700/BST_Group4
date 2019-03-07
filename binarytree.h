@@ -1,11 +1,9 @@
-#ifndef BINARYTREE_H
-#define BINARYTREE_H
+#ifndef BINARY_TREE_H
+#define BINARY_TREE_H
 
 typedef struct binary_tree{
 int num_elements;
-struct binary_tree* left;
-struct binary_tree* right;
-
+struct binary_tree* root;
 
 }bt;
 
