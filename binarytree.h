@@ -1,6 +1,10 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "node.h"
+
 typedef struct binary_tree_struct{
 	int num_elements;
 	struct binary_tree_struct* root;
