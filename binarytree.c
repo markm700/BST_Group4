@@ -5,7 +5,9 @@
 #include "binarytree.h"
 
 void initialize(BT* bt){
-	
+	bt->num_elements=0;
+	bt->root=NULL;
+	bt->root=(Node*)malloc(sizeof(Node));
 }
 
 bool search(BT* bt, int key){
