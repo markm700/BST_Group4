@@ -6,6 +6,7 @@
 
 int main(){
 	BT bt;
+	bool found;
 	
 	initialize(&bt);
 

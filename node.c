@@ -4,7 +4,7 @@
 
 Node* newNode(int data){
 	Node newNode;
-	newNode.data=data
+	newNode.data=data;
 	newNode.left=NULL;
 	newNode.right=NULL;
 	Node* ptr;
