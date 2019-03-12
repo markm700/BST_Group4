@@ -76,7 +76,13 @@ void printpreorder(BT* bt) {
 
 void printpostorder(BT* bt) {
 	Node* currNode = bt->root;
-
+	if (currNode == NULL){
+		return;
+	}
+	
+	printNodePOSTorder(currNode->left);
+	printNodePOSTorder(currNode->right);
+	printf("%d", currNode->data);
 }
 
 int btsize(BT* bt) {
