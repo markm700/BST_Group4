@@ -8,7 +8,7 @@
 typedef struct binary_tree_struct {
 	int num_elements;
 	int height;
-	struct binary_tree_struct* root;
+	Node* root;
 } BT;
 
 void initialize(BT* bt);
