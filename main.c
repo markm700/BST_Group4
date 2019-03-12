@@ -21,6 +21,7 @@ int main() {
 	fscanf(inFile, "%d",&numIn); //read in first number input
 	while (!feof(inFile)) {
 		insert(&bt, numIn);
+		//printf("%d\n",numIn); //this works
 		fscanf(inFile, " %d",&numIn); //read in other number inputs
 	}
 
