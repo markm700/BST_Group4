@@ -10,7 +10,7 @@ typedef struct node_struct {
 	struct node_struct* right;
 } Node;
 
-Node* newNode(int data);
+Node* newNode(int newNum);
 void printNodeINorder(Node* node);
 void printNodePREorder(Node* node);
 void printNodePOSTorder(Node* node);

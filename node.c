@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include "node.h"
 
-Node* newNode(int data) {
+Node* newNode(int newNum) {
 	Node newNode;
-    newNode.data = data;
-	newNode.left = NULL;
-	newNode.right = NULL;
+    newNode.data = newNum;
+	newNode.left = (Node*)malloc(sizeof(Node));
+	newNode.right = (Node*)malloc(sizeof(Node));
 	Node* ptr;
 	ptr = (Node*) malloc(sizeof(Node));
 	ptr = &newNode;
