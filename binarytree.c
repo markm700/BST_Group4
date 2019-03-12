@@ -26,7 +26,7 @@ bool search(BT* bt, int key) {
 void insert(BT* bt, int item) {
 	Node* temp = newNode(item);
 	int height = 0;
-	if (bt->root == NULL) {
+	if (bt->num_elements == 0) {
 		bt->root = temp;
 	} else {
 		Node* current = bt->root;
