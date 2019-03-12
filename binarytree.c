@@ -61,6 +61,16 @@ void insert(BT* bt, int item){
 void printinorder(BT* bt){
 	Node* currNode=(Node*)malloc(sizeof(Node));
 	currNode=bt->root;
+
+	if (currNode == NULL){
+		return;
+	}
+
+	printinorder(currNode->left);
+
+	printf("%d", currNode->data);
+
+	printinorder(currNode->right);
 }
 
 void printpreorder(BT* bt){
@@ -74,9 +84,9 @@ void printpostorder(BT* bt){
 }
 
 int btsize(BT* bt){
-	
+
 }
 
 int treeheight(BT* bt){
-	
+
 }
