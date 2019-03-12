@@ -3,8 +3,7 @@
 #include <stdbool.h>
 #include "binarytree.h"
 
-
-int main(){
+int main() {
 	BT bt;
 	bool found;
 	FILE* inFile;
@@ -12,17 +11,17 @@ int main(){
 	
 	numIn=0;
 	initialize(&bt);
-	
-	inFile=fopen("myfile.txt","r");
+
+	inFile = fopen("myfile.txt", "r");
 	if (inFile == NULL) {
-       printf("Could not open file\n");
-       return -1; // -1 indicates error
-    }
-	
-	fscanf(inFile,"%d",numIn); //read in first number input
-    while (!feof(inFile)){
-		insert(&bt,numIn);
-		fscanf(inFile," %d",numIn); //read in other number inputs
+		printf("Could not open file\n");
+		return -1; // -1 indicates error
+	}
+
+	fscanf(inFile, "%d", numIn); //read in first number input
+	while (!feof(inFile)) {
+		insert(&bt, numIn);
+		fscanf(inFile, " %d", numIn); //read in other number inputs
 	}
 
 	printf("Print in order\n");
@@ -32,12 +31,12 @@ int main(){
 	printf("\nPrint post order\n");
 	printpostorder(&bt);
 	printf("\n");
-	found = search(&bt,33);
-	if (found){
+	found = search(&bt, 33);
+	if (found) {
 		printf("FOUND 33\n");
 	}
-	found = search(&bt,38);
-	if (found){
+	found = search(&bt, 38);
+	if (found) {
 		printf("FOUND 38\n");
 	}
 	printf("Number of elements in tree: %d\n", btsize(&bt));

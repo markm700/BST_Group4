@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "node.h"
 
-typedef struct binary_tree_struct{
+typedef struct binary_tree_struct {
 	int num_elements;
 	int height;
 	struct binary_tree_struct* root;
