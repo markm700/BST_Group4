@@ -31,6 +31,7 @@ void insert(BT* bt, int item){
 	if(bt->root==NULL){
 		bt->root=temp;
 	}
+	int height = 0;
 	else{
 		Node* current=(Node*)malloc(sizeof(Node));
 		current=bt->root;
@@ -42,6 +43,7 @@ void insert(BT* bt, int item){
 				}
 				else{
 					current=current->left;
+					height++;
 				}
 			}
 			else{ //temp->data >= current->data
@@ -51,6 +53,7 @@ void insert(BT* bt, int item){
 				}
 				else{
 					current=current->right;
+					height++;
 				}
 			}
 		}
@@ -74,9 +77,44 @@ void printpostorder(BT* bt){
 }
 
 int btsize(BT* bt){
-	
+	return bt->num_elements;
 }
 
 int treeheight(BT* bt){
+	int height = 0;
+	if(bt->root==NULL)
+		return 0;
+	Node* current=bt->root;
+	int tempHeight = 0;
+	if (current->left!=null){
+		while (current->left!=null){
+			current=current->left;
+			tempHeight++;
+		}
+	}
+	if (tempHeight>height)
+		height=tempHeight;
+	current=current->root;
+	tempHeight=height-1;
+	if (current->right!=null){
+		while (current->left!=null){
+			current=current->left;
+			tempHeight++;
+		}
+	} else {
+		
+	}
+	if (tempHeight>height)
+		height=tempHeight;
+	current=current->root;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
