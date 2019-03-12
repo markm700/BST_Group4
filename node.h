@@ -4,9 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node_struct{
+typedef struct node_struct {
 	int data;
-	int height;
 	struct node_struct* left;
 	struct node_struct* right;
 } Node;
