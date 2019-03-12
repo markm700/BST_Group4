@@ -4,11 +4,7 @@
 
 Node* newNode(int data) {
 	Node newNode;
-<<<<<<< HEAD
     newNode.data = data;
-=======
-	newNode.data = data;
->>>>>>> cebf0a2885ce8019c5b68b2add7ef7c9879a611e
 	newNode.left = NULL;
 	newNode.right = NULL;
 	Node* ptr;
@@ -24,4 +20,22 @@ void printNodeINorder(Node* node){
 	printNodeINorder(node->left);
 	printf("%d", node->data);
 	printNodeINorder(node->right);
+}
+
+void printNodePREorder(Node* node){
+	if (node == NULL){
+		return;
+	}
+	printNodePREorder(node->left);
+	printf("%d", node->data);
+	printNodePREorder(node->right);
+}
+
+void printNodePOSTorder(Node* node){
+	if (node == NULL){
+		return;
+	}
+	printNodePREorder(node->left);
+	printf("%d", node->data);
+	printNodePREorder(node->right);
 }

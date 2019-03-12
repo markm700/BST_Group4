@@ -18,10 +18,10 @@ int main() {
 		return -1; // -1 indicates error
 	}
 
-	fscanf(inFile, "%d", numIn); //read in first number input
+	fscanf(inFile, "%d",&numIn); //read in first number input
 	while (!feof(inFile)) {
 		insert(&bt, numIn);
-		fscanf(inFile, " %d", numIn); //read in other number inputs
+		fscanf(inFile, " %d",&numIn); //read in other number inputs
 	}
 
 	printf("Print in order\n");
