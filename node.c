@@ -4,7 +4,11 @@
 
 Node* newNode(int data) {
 	Node newNode;
+<<<<<<< HEAD
     newNode.data = data;
+=======
+	newNode.data = data;
+>>>>>>> cebf0a2885ce8019c5b68b2add7ef7c9879a611e
 	newNode.left = NULL;
 	newNode.right = NULL;
 	Node* ptr;
