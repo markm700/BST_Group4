@@ -7,6 +7,7 @@
 int main(){
 	BT bt;
 	bool found;
+	FILE inFile;
 	
 	initialize(&bt);
 
