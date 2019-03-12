@@ -26,8 +26,8 @@ void printNodePREorder(Node* node){
 	if (node == NULL){
 		return;
 	}
-	printNodePREorder(node->left);
 	printf("%d", node->data);
+	printNodePREorder(node->left);
 	printNodePREorder(node->right);
 }
 
@@ -35,7 +35,7 @@ void printNodePOSTorder(Node* node){
 	if (node == NULL){
 		return;
 	}
-	printNodePREorder(node->left);
+	printNodePOSTorder(node->left);
+	printNodePOSTorder(node->right);
 	printf("%d", node->data);
-	printNodePREorder(node->right);
 }

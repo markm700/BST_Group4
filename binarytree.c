@@ -64,19 +64,19 @@ void printinorder(BT* bt){
 }
 
 void printpreorder(BT* bt) {
-	Node* currNode = bt->root;
-	if (currNode == NULL){
-		return;
-	}
-	
-}
-
-void printpostorder(BT* bt) {
 	Node* currNode =  bt->root;
 	if (currNode == NULL){
 		return;
 	}
-	
+
+	printf("%d", currNode->data);
+	printNodePREorder(currNode->left);
+	printNodePREorder(currNode->right);
+}
+
+void printpostorder(BT* bt) {
+	Node* currNode = bt->root;
+
 }
 
 int btsize(BT* bt) {
