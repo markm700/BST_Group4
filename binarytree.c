@@ -6,7 +6,7 @@
 
 void initialize(BT* bt){
 	bt->num_elements=0;
-	bt->root=NULL;
+	bt->root=NULL; //may need to alloc mem for root here
 }
 
 bool search(BT* bt, int key){
@@ -18,7 +18,7 @@ bool search(BT* bt, int key){
 		else if(key<current->data){
 			current=current->left;
 		}
-		else{
+		else{ //key > current->data
 			current=current->right;
 		}
 	}
@@ -36,7 +36,7 @@ void insert(BT* bt, int item){
 			if(temp->data < current->data){
 				if(current->left==NULL){
 					current->left=temp;
-					current=NULL;
+					current=NULL; //ends while loop
 				}
 				else{
 					current=current->left;
@@ -45,7 +45,7 @@ void insert(BT* bt, int item){
 			else{
 				if(current->right==NULL){
 					current->right=temp;
-					current=NULL;
+					current=NULL; //ends while loop
 				}
 				else{
 					current=current->right;
@@ -56,7 +56,7 @@ void insert(BT* bt, int item){
 }
 
 void printinorder(BT* bt){
-	Node currNode=bt->root;
+	Node* currNode=bt->root;
 }
 
 void printpreorder(BT* bt){
