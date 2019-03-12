@@ -6,6 +6,7 @@
 
 void initialize(BT* bt){
 	bt->num_elements=0;
+	bt->height=0;
 	bt->root=NULL; //may need to alloc mem for root here
 }
 
@@ -32,9 +33,11 @@ void insert(BT* bt, int item){
 		bt->root=temp;
 	}
 	else{
+		int height = 0;
 		Node* current=(Node*)malloc(sizeof(Node));
 		current=bt->root;
 		while(current!=NULL){
+			height++;
 			if(temp->data < current->data){
 				if(current->left==NULL){
 					current->left=temp;
@@ -56,6 +59,7 @@ void insert(BT* bt, int item){
 		}
 	}
 	bt->num_elements++;
+	bt->height = height;
 }
 
 void printinorder(BT* bt){
@@ -65,11 +69,8 @@ void printinorder(BT* bt){
 	if (currNode == NULL){
 		return;
 	}
-
 	printinorder(currNode->left);
-
 	printf("%d", currNode->data);
-
 	printinorder(currNode->right);
 }
 
@@ -84,9 +85,9 @@ void printpostorder(BT* bt){
 }
 
 int btsize(BT* bt){
-
+	return bt->num_elements;
 }
 
 int treeheight(BT* bt){
-
+	return bt->height;
 }

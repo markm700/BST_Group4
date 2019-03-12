@@ -8,8 +8,21 @@ int main(){
 	BT bt;
 	bool found;
 	FILE inFile;
+	int numIn;
 	
 	initialize(&bt);
+	
+	inFile=fopen("myfile.txt","r");
+	if (inFile == NULL) {
+       printf("Could not open file\n");
+       return -1; // -1 indicates error
+    }
+	
+	fscanf(inFile,"%d",numIn); //read in first number input
+    while (!feof(inFile)){
+		insert(&bt,numIn);
+		fscanf(inFile," %d",numIn); //read in other number inputs
+	}
 
 	printf("Print in order\n");
 	printinorder(&bt);

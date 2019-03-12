@@ -5,6 +5,7 @@
 Node* newNode(int data){
 	Node newNode;
 	newNode.data=data;
+	newNode.height=-1;
 	newNode.left=NULL;
 	newNode.right=NULL;
 	Node* ptr;
