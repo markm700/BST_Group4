@@ -11,5 +11,6 @@ typedef struct node_struct {
 } Node;
 
 Node* newNode(int data);
+void printNodeINorder(Node* node);
 
 #endif

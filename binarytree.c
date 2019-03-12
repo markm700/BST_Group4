@@ -7,7 +7,7 @@
 void initialize(BT* bt) {
 	bt->num_elements = 0;
 	bt->height = 0;
-	bt->root = NULL;	//may need to alloc mem for root here
+	bt->root = (Node*)malloc(sizeof(Node));	//may need to alloc mem for root here
 }
 
 bool search(BT* bt, int key) {
@@ -23,18 +23,6 @@ bool search(BT* bt, int key) {
 	}
 	return false; 	//key not found
 }
-
-
-void insert(BT* bt, int item){
-	Node* temp=newNode(item);
-	int height = 0;
-	if(bt->root==NULL){
-		bt->root=temp;
-	}
-	else{
-		Node* current=(Node*)malloc(sizeof(Node));
-		current=bt->root;
-		while(current!=NULL){
 
 void insert(BT* bt, int item) {
 	Node* temp = newNode(item);
@@ -73,9 +61,9 @@ void printinorder(BT* bt){
 	if (currNode == NULL){
 		return;
 	}
-	printinorder(currNode->left);
+	printNodeINorder(currNode->left);
 	printf("%d", currNode->data);
-	printinorder(currNode->right);
+	printNodeINorder(currNode->right);
 }
 
 void printpreorder(BT* bt) {
