@@ -67,13 +67,18 @@ void printinorder(BT* bt){
 }
 
 void printpreorder(BT* bt) {
-	Node* currNode = (Node*) malloc(sizeof(Node));
-	currNode = bt->root;
+	Node* currNode = bt->root;
+
+	if (currNode == NULL){
+		return;
+	}
+	printf("%d", currNode->data);
+	printNodePreOrder(currNode->left);
+	printNodePreOrder(currNode->right);
 }
 
 void printpostorder(BT* bt) {
-	Node* currNode = (Node*) malloc(sizeof(Node));
-	currNode = bt->root;
+	Node* currNode = bt->root;
 }
 
 int btsize(BT* bt) {
