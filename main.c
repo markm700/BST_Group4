@@ -7,9 +7,10 @@
 int main(){
 	BT bt;
 	bool found;
-	FILE inFile;
+	FILE* inFile;
 	int numIn;
 	
+	numIn=0;
 	initialize(&bt);
 	
 	inFile=fopen("myfile.txt","r");

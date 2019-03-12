@@ -29,11 +29,11 @@ bool search(BT* bt, int key){
 
 void insert(BT* bt, int item){
 	Node* temp=newNode(item);
+	int height = 0;
 	if(bt->root==NULL){
 		bt->root=temp;
 	}
 	else{
-		int height = 0;
 		Node* current=(Node*)malloc(sizeof(Node));
 		current=bt->root;
 		while(current!=NULL){
