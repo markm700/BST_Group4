@@ -15,7 +15,6 @@ typedef struct node_struct {
 } Node;
 
 Node* newNode(int newNum);
-void printNode(Node* node);
 void printNodeINorder(Node* node);
 void printNodePREorder(Node* node);
 void printNodePOSTorder(Node* node);

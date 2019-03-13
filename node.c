@@ -12,15 +12,12 @@ Node* newNode(int newNum) {
 	return newNode;
 }
 
-void printNode(Node* node){
-	printf("%d\n", node->data);
-}
 void printNodeINorder(Node* node){
 	if (node == NULL){
 		return;
 	}
 	printNodeINorder(node->left);
-	printf("%d", node->data);
+	printf("%d ", node->data);
 	printNodeINorder(node->right);
 }
 
@@ -28,7 +25,7 @@ void printNodePREorder(Node* node){
 	if (node == NULL){
 		return;
 	}
-	printf("%d", node->data);
+	printf("%d ", node->data);
 	printNodePREorder(node->left);
 	printNodePREorder(node->right);
 }
@@ -39,5 +36,5 @@ void printNodePOSTorder(Node* node){
 	}
 	printNodePOSTorder(node->left);
 	printNodePOSTorder(node->right);
-	printf("%d", node->data);
+	printf("%d ", node->data);
 }

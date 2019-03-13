@@ -8,7 +8,7 @@
 void initialize(BT* bt) {
 	bt->num_elements = 0;
 	bt->height = 0;
-	bt->root = (Node*)malloc(sizeof(Node));	//may need to alloc mem for root here
+	bt->root = NULL;
 }
 
 bool search(BT* bt, int key) {
@@ -27,20 +27,26 @@ bool search(BT* bt, int key) {
 void insert(BT* bt, int item) {
 	Node* temp = newNode(item);
 	int height = 0;
+	int inserted = 0;
+	temp->left=NULL;
+	temp->right=NULL;
+	temp->parent=NULL;
 	if (bt->num_elements == 0) {
 		bt->root = temp;
 	} else {
 		Node* current = bt->root;
-		while (current != NULL) {
+		while (current!=NULL) {
 			height++;
 			if (temp->data < current->data) {
 				if (current->left == NULL) {
+					temp->parent = current;
 					current->left = temp;
 					current = NULL; 				//ends while loop
 				} else
 					current = current->left;
 			} else { 							//temp->data >= current->data
 				if (current->right == NULL) {
+					temp->parent = current;
 					current->right = temp;
 					current = NULL; 				//ends while loop
 				} else
@@ -60,7 +66,7 @@ void printinorder(BT* bt){
 		return;
 	}
 	printNodeINorder(currNode->left);
-	printf("%d", currNode->data);
+	printf("%d ", currNode->data);
 	printNodeINorder(currNode->right);
 }
 
@@ -70,7 +76,7 @@ void printpreorder(BT* bt) {
 		return;
 	}
 
-	printf("%d", currNode->data);
+	printf("%d ", currNode->data);
 	printNodePREorder(currNode->left);
 	printNodePREorder(currNode->right);
 }
@@ -83,7 +89,7 @@ void printpostorder(BT* bt) {
 	
 	printNodePOSTorder(currNode->left);
 	printNodePOSTorder(currNode->right);
-	printf("%d", currNode->data);
+	printf("%d ", currNode->data);
 }
 
 int btsize(BT* bt) {
