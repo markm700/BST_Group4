@@ -5,16 +5,16 @@
 #include "node.h"
 
 Node* newNode(int newNum) {
-	Node newNode;
-    newNode.data = newNum;
-	newNode.left = (Node*)malloc(sizeof(Node));
-	newNode.right = (Node*)malloc(sizeof(Node));
-	Node* ptr;
-	ptr = (Node*) malloc(sizeof(Node));
-	ptr = &newNode;
-	return ptr;
+	Node* newNode;
+	newNode = (Node*) malloc(sizeof(Node));
+    newNode->data = newNum;
+	newNode->checked = 0;
+	return newNode;
 }
 
+void printNode(Node* node){
+	printf("%d\n", node->data);
+}
 void printNodeINorder(Node* node){
 	if (node == NULL){
 		return;

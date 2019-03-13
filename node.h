@@ -8,11 +8,14 @@
 
 typedef struct node_struct {
 	int data;
+	int checked;
 	struct node_struct* left;
 	struct node_struct* right;
+	struct node_struct* parent;
 } Node;
 
 Node* newNode(int newNum);
+void printNode(Node* node);
 void printNodeINorder(Node* node);
 void printNodePREorder(Node* node);
 void printNodePOSTorder(Node* node);
