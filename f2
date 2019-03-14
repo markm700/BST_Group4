@@ -1,0 +1,8 @@
+Print in order
+1 7 9 13 54 72 86 99 106 
+Print pre order
+72 54 7 1 9 13 86 106 99 
+Print post order
+1 13 9 7 54 99 106 86 72 
+Number of elements in tree: 9
+Tree height: 4

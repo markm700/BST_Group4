@@ -6,21 +6,27 @@
 #include "binarytree.h"
 #include "node.h"
 
-int main() {
+int main(int argc, char* argv[]) {
+	FILE* inFile = NULL;
+	if (argc > 1) {
+		inFile = fopen(argv[1], "r");
+		if (inFile == NULL) {
+			printf("Could not open file %s.\n", argv[1]);
+			return -1;
+		}
+	}/* else {
+		inFile = fopen("myfile.txt", "r");
+		if (inFile == NULL) {
+			printf("Could not open file myfile.txt.\n");
+			return -1;
+		}
+	}*/
 	BT bt;
 	bool found;
-	FILE* inFile = NULL;
 	int numIn;
 
 	numIn = 0;
 	initialize(&bt);
-
-	inFile = fopen("myfile.txt", "r");
-
-	if (inFile == NULL) {
-		printf("Could not open file\n");
-		return -1; // -1 indicates error
-	}
 
 	fscanf(inFile, "%d", &numIn); //read in first number input
 	while (!feof(inFile)) {
