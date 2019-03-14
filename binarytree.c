@@ -18,7 +18,8 @@ bool search(BT* bt, int key) {
 			return true;
 		else if (key < current->data)
 			current = current->left;
-		else	//key > current->data
+		else
+			//key > current->data
 			current = current->right;
 	}
 	return false; 	//key not found
@@ -27,26 +28,22 @@ bool search(BT* bt, int key) {
 void insert(BT* bt, int item) {
 	Node* temp = newNode(item);
 	int height = 0;
-	int inserted = 0;
-	temp->left=NULL;
-	temp->right=NULL;
-	temp->parent=NULL;
+	temp->left = NULL;
+	temp->right = NULL;
 	if (bt->num_elements == 0) {
 		bt->root = temp;
 	} else {
 		Node* current = bt->root;
-		while (current!=NULL) {
+		while (current != NULL) {
 			height++;
 			if (temp->data < current->data) {
 				if (current->left == NULL) {
-					temp->parent = current;
 					current->left = temp;
 					current = NULL; 				//ends while loop
 				} else
 					current = current->left;
 			} else { 							//temp->data >= current->data
 				if (current->right == NULL) {
-					temp->parent = current;
 					current->right = temp;
 					current = NULL; 				//ends while loop
 				} else
@@ -59,10 +56,10 @@ void insert(BT* bt, int item) {
 		bt->height = height;
 }
 
-void printinorder(BT* bt){
-	Node* currNode=bt->root;
+void printinorder(BT* bt) {
+	Node* currNode = bt->root;
 
-	if (currNode == NULL){
+	if (currNode == NULL) {
 		return;
 	}
 	printNodeINorder(currNode->left);
@@ -71,8 +68,8 @@ void printinorder(BT* bt){
 }
 
 void printpreorder(BT* bt) {
-	Node* currNode =  bt->root;
-	if (currNode == NULL){
+	Node* currNode = bt->root;
+	if (currNode == NULL) {
 		return;
 	}
 
@@ -83,10 +80,10 @@ void printpreorder(BT* bt) {
 
 void printpostorder(BT* bt) {
 	Node* currNode = bt->root;
-	if (currNode == NULL){
+	if (currNode == NULL) {
 		return;
 	}
-	
+
 	printNodePOSTorder(currNode->left);
 	printNodePOSTorder(currNode->right);
 	printf("%d ", currNode->data);

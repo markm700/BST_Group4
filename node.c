@@ -7,13 +7,12 @@
 Node* newNode(int newNum) {
 	Node* newNode;
 	newNode = (Node*) malloc(sizeof(Node));
-    newNode->data = newNum;
-	newNode->checked = 0;
+	newNode->data = newNum;
 	return newNode;
 }
 
-void printNodeINorder(Node* node){
-	if (node == NULL){
+void printNodeINorder(Node* node) {
+	if (node == NULL) {
 		return;
 	}
 	printNodeINorder(node->left);
@@ -21,8 +20,8 @@ void printNodeINorder(Node* node){
 	printNodeINorder(node->right);
 }
 
-void printNodePREorder(Node* node){
-	if (node == NULL){
+void printNodePREorder(Node* node) {
+	if (node == NULL) {
 		return;
 	}
 	printf("%d ", node->data);
@@ -30,8 +29,8 @@ void printNodePREorder(Node* node){
 	printNodePREorder(node->right);
 }
 
-void printNodePOSTorder(Node* node){
-	if (node == NULL){
+void printNodePOSTorder(Node* node) {
+	if (node == NULL) {
 		return;
 	}
 	printNodePOSTorder(node->left);
